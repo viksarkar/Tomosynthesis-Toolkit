@@ -1,0 +1,71 @@
+function rewriteimageforP3(sourceimagepathname,sourceimagefilename,imagename,orientation,destimagepathname,destimagefilename)
+[x_dim,y_dim,z_dim,x_start,y_start,z_start,x_pixdim,y_pixdim,z_pixdim,filename] = Readmhd([sourceimagepathname,sourceimagefilename]);
+fid = fopen([sourceimagepathname,filename],'r');
+A = fread(fid,'uint16');
+fclose(fid);
+A = reshape(A,x_dim,y_dim,z_dim);
+switch orientation
+    case 1
+        fid = fopen([destimagepathname,destimagefilename],'w');
+        B = zeros(x_dim,z_dim,y_dim);
+        for i = 1:y_dim
+           B(:,:,i)=squeeze(A(:,i,:)); 
+        end
+        fwrite(fid,B,'uint16');
+        fclose(fid);
+        headername = [substr(destimagefilename,0,-3),'header'];
+        fid = fopen([destimagepathname,headername],'wt');
+        fprintf(fid,'%s\n', 'byte_order = 0;');
+        fprintf(fid,'%s\n','read_conversion = "";');
+        fprintf(fid,'%s\n','write_conversion = "";');
+        fprintf(fid,'%s\n','t_dim = 0;');
+        fprintf(fid,'%s\n',strcat('x_dim = ',num2str(x_dim),';'));
+        fprintf(fid,'%s\n',strcat('y_dim = ',num2str(z_dim),';'));
+        fprintf(fid,'%s\n',strcat('z_dim = ',num2str(y_dim),';'));
+        fprintf(fid,'%s\n','datatype = 0;');
+        fprintf(fid,'%s\n','bitpix = 0;');
+        fprintf(fid,'%s\n','bytes_pix = 2;');
+        fprintf(fid,'%s\n','t_pixdim = 0.000000;');
+        fprintf(fid,'%s\n',strcat('x_pixdim = ',num2str(x_pixdim/10),';'));
+        fprintf(fid,'%s\n',strcat('y_pixdim = ',num2str(z_pixdim/10),';'));
+        fprintf(fid,'%s\n',strcat('z_pixdim = ',num2str(y_pixdim/10),';'));
+        fprintf(fid,'%s\n','t_start = 0.000000;');
+        fprintf(fid,'%s\n',strcat('x_start = ',num2str(x_start/10),';'));
+        fprintf(fid,'%s\n',strcat('y_start = ',num2str(z_start/10),';'));
+        fprintf(fid,'%s\n',strcat('z_start = ',num2str(y_start/10),';'));
+        fprintf(fid,'%s\n','z_time = 0.000000;');
+        fprintf(fid,'%s\n','dim_units : ');
+        fprintf(fid,'%s\n','voxel_type :');
+        fprintf(fid,'%s\n','id = 0;');
+        fprintf(fid,'%s\n','vis_only = 0;');
+        fprintf(fid,'%s\n','data_type : ');
+        fprintf(fid,'%s\n','vol_type : ');
+        fprintf(fid,'%s\n',strcat('db_name : ',imagename));
+        fprintf(fid,'%s\n','medical_record : ');
+        fprintf(fid,'%s\n','originator : ');
+        daterecorder=date;
+        fprintf(fid,'%s%s\n','date : ',daterecorder);
+        fprintf(fid,'%s\n','scanner_id : ');
+        fprintf(fid,'%s\n','patient_position : ');
+        fprintf(fid,'%s\n','orientation = 0;');
+        fprintf(fid,'%s\n','scan_acquisition = 0;');
+        fprintf(fid,'%s\n',strcat('comment : ',imagename,';'));
+        fprintf(fid,'%s\n','fname_format : ');
+        fprintf(fid,'%s\n','fname_index_start = 0;');
+        fprintf(fid,'%s\n','fname_index_delta = 0;');
+        fprintf(fid,'%s\n','binary_header_size = 0;');
+        fprintf(fid,'%s\n','manufacturer : ');
+        fprintf(fid,'%s\n','model : ');
+        fprintf(fid,'%s\n','couch_pos = 0.000000;');
+        fprintf(fid,'%s\n','couch_height = 0.000000;');
+        fprintf(fid,'%s\n','X_offset = 0.000000;');
+        fprintf(fid,'%s\n','Y_offset = 0.000000;');
+        fprintf(fid,'%s\n','Z_offset = 0.000000;');
+        fprintf(fid,'%s\n','dataset_modified = 0;');
+        fprintf(fid,'%s\n','study_id : ');
+        fprintf(fid,'%s\n','exam_id : ');
+        fprintf(fid,'%s\n','patient_id : ');
+        fprintf(fid,'%s\n','modality : ');
+        fclose(fid);
+end
+clear A B;

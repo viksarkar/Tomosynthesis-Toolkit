@@ -1,0 +1,8 @@
+ObjectType = Image
+NDims = 3
+DimSize = 512 50 512
+ElementSpacing = 0.52083 -5.00000 0.52083
+Offset = -133.0729 122.5000 -133.0729
+ElementByteOrderMSB = False
+ElementType = MET_USHORT
+ElementDataFile = SAAReconstruction.raw

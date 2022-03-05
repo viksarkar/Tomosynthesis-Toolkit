@@ -1,0 +1,41 @@
+function RewritePOIfile(path, file, handles)
+fid = fopen([path,file],'rt');
+A = textscan(fid, '%s', 'Delimiter', '\n', 'Whitespace', '');
+fclose(fid);
+fid = fopen([path,'plan.Points'],'wt+');
+for i = 1:(size(A{1},1)-1)
+    str = A{1}{i};
+    fprintf(fid,'%s\n',str);
+end
+fprintf(fid,'%s\n','Poi ={');
+fprintf(fid,'%s\n','  Name = "Shifted Isocenter";');
+orixcoord = get(handles.isoxval,'string');
+xcoord = str2num(orixcoord) + handles.xshift/10;
+fprintf(fid,'%s\n',['  XCoord = ',num2str(xcoord),';']);
+oriycoord = get(handles.isoyval,'string');
+ycoord = str2num(oriycoord) - handles.yshift/10;
+fprintf(fid,'%s\n',['  YCoord = ',num2str(ycoord),';']);
+orizcoord = get(handles.isozval,'string');
+zcoord = str2num(orizcoord) - handles.zshift/10;
+fprintf(fid,'%s\n',['  ZCoord = ',num2str(zcoord),';']);
+fprintf(fid,'%s\n','  XRotation = 0;');
+fprintf(fid,'%s\n','  YRotation = 0;');
+fprintf(fid,'%s\n','  ZRotation = 0;');
+fprintf(fid,'%s\n','  Radius = 3;');
+fprintf(fid,'%s\n','  Color = "yellow";');
+fprintf(fid,'%s\n','  CoordSys = "CT";');
+fprintf(fid,'%s\n','  CoordinateFormat = "%6.2f";');
+fprintf(fid,'%s\n','  Display2d = "On";');
+fprintf(fid,'%s\n','  Display3d = "Off";');
+fprintf(fid,'%s\n','  ObjectVersion ={');
+fprintf(fid,'%s\n','    WriteVersion = "Pinnacle v8.0d";');
+fprintf(fid,'%s\n','    CreateVersion = "Pinnacle v8.0d";');
+fprintf(fid,'%s\n','    LoginName = "p3rtp";');
+temp = ['    CreateTimeStamp = "',datestr(now,31),'";'];
+fprintf(fid,'%s\n',temp);
+temp = ['    WriteTimeStamp = "',datestr(now,31),'";'];
+fprintf(fid,'%s\n',temp);
+fprintf(fid,'%s\n','    LastModifiedTimeStamp = "";');
+fprintf(fid,'%s\n','  };');
+fprintf(fid,'%s\n','};');
+fclose(fid);

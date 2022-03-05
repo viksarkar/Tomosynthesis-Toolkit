@@ -1,0 +1,9 @@
+ObjectType = Image
+NDims = 3
+DimSize = 512 512 141
+ElementSpacing = 0.93750 -0.93750 2.50000
+Offset = -260.6250 225.0000 -112.5000
+ContourOrigin = -240.0000 -240.0000 -100.2500
+ElementByteOrderMSB = False
+ElementType = MET_USHORT
+ElementDataFile = OriginalCT.raw

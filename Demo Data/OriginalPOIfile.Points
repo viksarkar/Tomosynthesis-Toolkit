@@ -1,0 +1,140 @@
+Poi ={
+  Name = "Marked";
+  XCoord = -0.046875;
+  YCoord = -48.0469;
+  ZCoord = -0.28;
+  XRotation = 0;
+  YRotation = 0;
+  ZRotation = 0;
+  Radius = 1;
+  Color = "red";
+  CoordSys = "CT";
+  CoordinateFormat = "%6.2f";
+  Display2d = "On";
+  Display3d = "Off";
+  ObjectVersion ={
+    WriteVersion = "Pinnacle v8.0m";
+    CreateVersion = "Pinnacle v8.0m";
+    LoginName = "p3rtp";
+    CreateTimeStamp = "2008-12-08 13:20:15";
+    WriteTimeStamp = "2008-12-24 16:23:18";
+    LastModifiedTimeStamp = "";
+  };
+};
+Poi ={
+  Name = "FINAL ISO";
+  XCoord = -1.96733;
+  YCoord = -46.5309;
+  ZCoord = 8.1;
+  XRotation = 0;
+  YRotation = 0;
+  ZRotation = 0;
+  Radius = 1;
+  Color = "green";
+  CoordSys = "CT";
+  CoordinateFormat = "%6.2f";
+  Display2d = "On";
+  Display3d = "Off";
+  ObjectVersion ={
+    WriteVersion = "Pinnacle v8.0m";
+    CreateVersion = "Pinnacle v8.0d";
+    LoginName = "p3rtp";
+    CreateTimeStamp = "2008-12-11 08:44:27";
+    WriteTimeStamp = "2008-12-24 16:23:18";
+    LastModifiedTimeStamp = "";
+  };
+};
+Poi ={
+  Name = "Tumor point";
+  XCoord = -2.65341;
+  YCoord = -46.2922;
+  ZCoord = 6.975;
+  XRotation = 0;
+  YRotation = 0;
+  ZRotation = 0;
+  Radius = 1;
+  Color = "blue";
+  CoordSys = "CT";
+  CoordinateFormat = "%6.2f";
+  Display2d = "On";
+  Display3d = "Off";
+  ObjectVersion ={
+    WriteVersion = "Pinnacle v8.0m";
+    CreateVersion = "Pinnacle v8.0m";
+    LoginName = "p3rtp";
+    CreateTimeStamp = "2008-12-12 19:07:58";
+    WriteTimeStamp = "2008-12-24 16:23:18";
+    LastModifiedTimeStamp = "";
+  };
+};
+Poi ={
+  Name = "Contralateral Tonsil";
+  XCoord = 3.34332;
+  YCoord = -46.187;
+  ZCoord = 6.975;
+  XRotation = 0;
+  YRotation = 0;
+  ZRotation = 0;
+  Radius = 1;
+  Color = "yellow";
+  CoordSys = "CT";
+  CoordinateFormat = "%6.2f";
+  Display2d = "On";
+  Display3d = "Off";
+  ObjectVersion ={
+    WriteVersion = "Pinnacle v8.0m";
+    CreateVersion = "Pinnacle v8.0m";
+    LoginName = "p3rtp";
+    CreateTimeStamp = "2008-12-12 19:08:31";
+    WriteTimeStamp = "2008-12-24 16:23:18";
+    LastModifiedTimeStamp = "";
+  };
+};
+Poi ={
+  Name = "Cord Point";
+  XCoord = 0.39756;
+  YCoord = -50.6788;
+  ZCoord = 6.975;
+  XRotation = 0;
+  YRotation = 0;
+  ZRotation = 0;
+  Radius = 1;
+  Color = "purple";
+  CoordSys = "CT";
+  CoordinateFormat = "%6.2f";
+  Display2d = "On";
+  Display3d = "Off";
+  ObjectVersion ={
+    WriteVersion = "Pinnacle v8.0m";
+    CreateVersion = "Pinnacle v8.0m";
+    LoginName = "p3rtp";
+    CreateTimeStamp = "2008-12-12 19:08:58";
+    WriteTimeStamp = "2008-12-24 16:23:18";
+    LastModifiedTimeStamp = "";
+  };
+};
+Poi ={
+  Name = "Delivery Iso";
+  XCoord = -1.97;
+  YCoord = -46.53;
+  ZCoord = 0.59;
+  XRotation = 0;
+  YRotation = 0;
+  ZRotation = 0;
+  Radius = 1;
+  Color = "skyblue";
+  CoordSys = "CT";
+  CoordinateFormat = "%6.2f";
+  Display2d = "On";
+  Display3d = "Off";
+  ObjectVersion ={
+    WriteVersion = "Pinnacle v8.0m";
+    CreateVersion = "Pinnacle v8.0m";
+    LoginName = "p3rtp";
+    CreateTimeStamp = "2008-12-24 16:21:39";
+    WriteTimeStamp = "2008-12-24 16:23:18";
+    LastModifiedTimeStamp = "";
+  };
+};
+
+/* Hý */

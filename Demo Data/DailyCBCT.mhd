@@ -1,0 +1,8 @@
+ObjectType = Image
+NDims = 3
+DimSize = 300 50 300
+ElementSpacing = 1.00000 -5.00000 1.00000
+Offset = -149.5000 122.5000 -149.5000
+ElementByteOrderMSB = False
+ElementType = MET_USHORT
+ElementDataFile = DailyCBCT.raw
